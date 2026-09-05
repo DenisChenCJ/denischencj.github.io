@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloraNote：您的專業植物調查筆記</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.8; 
+            color: #333; 
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 40px 25px; 
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+    
+    .header-section {
+        text-align: center; 
+        margin-bottom: 40px;
+    }
+
+    .app-logo {
+        width: 120px; 
+        height: auto;
+        margin-bottom: 15px;
+    }
+        h1 { color: #a56b28; border-bottom: 3px solid #c09768; padding-bottom: 15px; margin: 0; }
+        h2 { color: #3d9a3d; margin-top: 35px; font-size: 1.4em; border-left: 5px solid #3d9a3d; padding-left: 15px; }
+        h3 { color: #63ae63; margin-top: 25px; font-size: 1.2em; }
+        p, li { color: #555; }
+        ul { padding-left: 20px; }
+        strong { color: #333; }
+        .intro-text {
+    border-left: 4px solid #a56b28;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-size: 1.1em;
+    background: transparent; /* 去除原本的黃色底色 */
+}
+        .note-section { margin-top: 40px; margin-bottom: 40px; padding: 20px; background-color: #f1f8f1; border-radius: 8px; font-size: 0.9em; }
+        .note-item { margin-bottom: 8px; color: #666; }
+        .last-updated { color: #999; font-size: 0.9em; margin-bottom: 30px; }
+/* 功能對照表專屬樣式 */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    font-size: 0.95em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.comparison-table th {
+    background-color: #3d9a3d;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+.comparison-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.comparison-table tr:nth-child(even) {
+    background-color: #fcfdfc;
+}
+.comparison-table .feature-name {
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+    width: 30%;
+}
+.comparison-table .premium-col {
+    background-color: #f1f8f1;
+    font-weight: bold;
+    color: #2e7d32;
+}
+.check-icon {
+    color: #3d9a3d;
+    font-weight: bold;
+}
+        .footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center;
+            color: #7f8c8d;
+        }
+        a { color: #f1c40f; text-decoration: none; font-weight: bold; }
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #f1c40f;
+            color: white !important;
+            border-radius: 30px;
+            text-decoration: none !important;
+            font-size: 1.1em;
+            transition: transform 0.2s;
+        }
+        .contact-btn:hover {
+            transform: scale(1.05);
+            background-color: #d4ac0d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <img src="../assets/images/floranote-logo.svg" alt="FloraNote Logo" class="app-logo">
+            <h1>FloraNote：您的專業植物調查筆記</h1>
+        </div>
+        <p class="last-updated">最近更新日期：2026年1月8日</p>
+
+        <div class="intro-text">
+            專為環境科學研究者、專業學生、生態調查員及資深植物愛好者設計。</br>
+我們將複雜的野外記錄及文書整理流程，轉化為一個高效、準確且數據完整的行動工作站。
+        </div>
+
+        <h2>FloraNote 核心專業價值</h2>
+        
+        <h3>1. 【調查結束，報告也完成了！】</h3>
+        <p>別再把時間浪費在謄寫筆記。FloraNote 自動化您的作業流，野外收工即刻一鍵生成 RTF 專業報告，後製工作秒速達標。</p>
+
+        <h3>2. 【數據無縫傳輸，手機電腦零阻力】</h3>
+        <p>生成 RTF 名錄完美相容 Word，透過 AirDrop 或雲端即時分享。匯出直接貼入工作文件，格式不跑位，讓您從山區到辦公室無縫接軌。</p>
+
+        <h3>3. 【植物位置精確導向，每一筆座標都能微調】</h3>
+        <p>自動擷取 GPS 是標配，但我們做得更多。遇到密林遮蔽也別擔心，支援個別座標手動微調，確保每一株植物的位置都絕對精準。</p>
+
+        <h3>4. 【GIS 專家最愛，GeoJSON 一鍵匯出】</h3>
+        <p>除了名錄報告，更能產出 GeoJSON 格式。直接匯入 Google Earth，調查成果都能立即轉化為專業地圖，快速啟動空間分析。</p>
+
+        <h3>5. 【臺灣 814 種植物名錄，離線即時查】</h3>
+        <p>內建常見的植物資料庫。在深山沒網路？照樣能快速搜尋學名與屬性，現場記錄既精準又專業。</p>
+
+        <h2>版本分級，滿足您的不同需求</h2>
+        <ul>
+            <li><strong>體驗版 (Free)：</strong>免費使用核心功能 (RTF 匯出) 與 814 種名錄，可透過觀看廣告，有限度地解鎖專案數量與記錄筆數。</li>
+            <li><strong>標準版 (Standard)：</strong>移除所有廣告，專案數量與記錄筆數皆無限制(註1)，獨享完整欄位 RTF 名錄(註2)、GeoJSON、照片壓縮包等匯出功能，專為追求效率的個人專業用戶設計。</li>
+        </ul>
+
+<h2 id="feature-compare">FloraNote 功能對照表</h2>
+<table class="comparison-table">
+    <thead>
+        <tr>
+            <th>功能模組</th>
+            <th>體驗版 (Free)</th>
+            <th>專業標準版 (Premium)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="feature-name">廣告體驗</td>
+            <td>包含橫幅與獎勵影片</td>
+            <td class="premium-col">完全無廣告，清爽作業</td>
+        </tr>
+        <tr>
+            <td class="feature-name">專案管理</td>
+            <td>基礎 3 個 (觀看廣告擴增至 5 個)</td>
+            <td class="premium-col">無限制數量</td>
+        </tr>
+        <tr>
+            <td class="feature-name">植物紀錄</td>
+            <td>每專案 15 筆 (觀看廣告擴增至 20 筆)</td>
+            <td class="premium-col">無限制筆數</td>
+        </tr>
+        <tr>
+            <td class="feature-name">RTF 報告欄位</td>
+            <td>基本 9 欄位</td>
+            <td class="premium-col">完整 12 欄位 (含座標)</td>
+        </tr>
+        <tr>
+            <td class="feature-name">GIS 數據匯出</td>
+            <td>✕</td>
+            <td class="premium-col"><span class="check-icon">✔</span> 支援 GeoJSON 格式</td>
+        </tr>
+        <tr>
+            <td class="feature-name">批量照片匯出</td>
+            <td>✕</td>
+            <td class="premium-col"><span class="check-icon">✔</span> 一鍵打包 ZIP 匯出</td>
+        </tr>
+        <tr>
+            <td class="feature-name">常用植物數量</td>
+            <td>10 筆 (觀看廣告擴增至 15 筆)</td>
+            <td class="premium-col">無限制數量</td>
+        </tr>
+    </tbody>
+</table>
+
+        <div class="note-section">
+            <div class="note-item">(註1) 實際專案或記錄筆數將受裝置本身記憶體與容量限制。</div>
+            <div class="note-item">(註2) RTF 名錄基本欄位包含分類、科、學名、中文名、生長習性、屬性、臺灣紅皮書、文資法與備註，標準版解鎖完整欄位，額外包含關鍵的地理座標(緯度、經度)與精確紀錄時間。</div>
+            <div class="note-item">(註3) FloraNote 目前優先針對 iPhone 進行操作體驗優化。雖然本 App 可以在 iPad 上安裝並使用完整功能，但介面尚未針對大螢幕顯示進行專屬佈局最佳化。我們建議使用 iPhone 以獲得最流暢的野外調查體驗。</div>
+        </div>
+
+        <div style="text-align: center;">
+            <p>有任何建議或合作需求？ 歡迎與我們聯絡</p>
+            <a href="https://docs.google.com/forms/d/1F5Q2xWaoYN0Yq0LVmtZSDV2lkJ0Eqy_AhULfeMTi-wk/viewform?edit_requested=true" class="contact-btn">聯繫我們</a>
+        </div>
+
+        <div class="footer">
+            © 2026 Designed by Denis<br>
+            All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
