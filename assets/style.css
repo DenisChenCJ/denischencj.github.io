@@ -118,6 +118,9 @@ h2 .gloss {
   height: 72px;
   border-radius: 16px;
   border: 1px solid var(--rule);
+  /* App 圖示為去背 PNG，補白底填滿圓角方框，維持 App Store 的圖示視覺。
+     此處刻意不隨主題切換：圖示畫布本身就是白的，深色模式下亦然。 */
+  background-color: #FFFFFF;
 }
 
 .entry-body { min-width: 0; }
