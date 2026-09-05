@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memoland 技術支援</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.8; 
+            color: #333; 
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 40px 25px; 
+            background-color: #F4F7F9;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+    .header-section {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .app-logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+        h1 { color: #1B2635; border-bottom: 3px solid #FF6D38; padding-bottom: 15px; margin: 0; }
+        h2 { color: #184E95; margin-top: 35px; font-size: 1.4em; border-left: 5px solid #184E95; padding-left: 15px; }
+        h3 { color: #4A7FC1; margin-top: 25px; font-size: 1.1em; }
+        p, li { color: #555; }
+        ul { padding-left: 20px; }
+        strong { color: #333; }
+        .last-updated { color: #999; font-size: 0.9em; margin-bottom: 30px; }
+
+        /* 聯絡區塊：置於頁面最前，確保使用者與審查人員第一眼可見 */
+        .contact-box {
+            margin: 30px 0 40px;
+            padding: 25px 30px;
+            background-color: #EAF1F8;
+            border-radius: 8px;
+        }
+        .contact-box p { margin: 0 0 10px; }
+        .contact-box .email {
+            font-size: 1.15em;
+            font-weight: bold;
+            word-break: break-all;
+        }
+        .contact-box .email a { color: #1C74BD; }
+        .contact-box .email a:hover { color: #155E9B; }
+
+        /* 常見問題 */
+        .faq-item { margin-bottom: 22px; }
+        .faq-item h3 { margin-top: 0; margin-bottom: 6px; }
+        .faq-item p { margin: 0; }
+
+        /* 系統需求表 */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 0;
+            font-size: 0.95em;
+        }
+        .spec-table th {
+            text-align: left;
+            padding: 12px 15px;
+            width: 32%;
+            background-color: #EAF1F8;
+            color: #184E95;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        .spec-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+
+        /* 頁面互連：置中、無底色，使用通用連結藍 */
+        .page-links {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+        .page-links a { color: #1C74BD; }
+        .page-links a:hover { color: #155E9B; text-decoration: underline; }
+
+        .note-section { margin-top: 40px; padding: 20px; background-color: #EAF1F8; border-radius: 8px; font-size: 0.9em; }
+        .note-item { margin-bottom: 8px; color: #666; }
+
+        .footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center;
+            color: #7f8c8d;
+        }
+        a { color: #184E95; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #FF6D38;
+            color: white !important;
+            border-radius: 30px;
+            text-decoration: none !important;
+            font-size: 1.1em;
+            transition: transform 0.2s;
+        }
+        .contact-btn:hover {
+            transform: scale(1.05);
+            background-color: #E85A24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <img src="../assets/images/memoland-logo.svg" alt="memoland Logo" class="app-logo">
+            <h1>memoland 技術支援</h1>
+        </div>
+        <p class="last-updated">最近更新日期：2026年9月6日</p>
+
+        <div class="contact-box">
+            <p>使用上有任何問題或錯誤回報，都歡迎直接與我們聯絡。</p>
+            <p class="email"><a href="mailto:gtr6gb836@gmail.com">gtr6gb836@gmail.com</a></p>
+            <p>來信時請盡量附上下方「回報問題時請提供的資訊」，有助於我們更快找出原因。</p>
+            <div style="text-align: center;">
+                <a href="https://forms.gle/nmDyok7FLxBcfENi7" class="contact-btn">使用意見表單</a>
+            </div>
+        </div>
+
+        <h2>常見問題</h2>
+
+        <div class="faq-item">
+            <h3>我的紀錄資料存在哪裡？換手機或重新安裝會不會不見？</h3>
+            <p>所有點位、照片與錄音都儲存在您的裝置本地空間，不會上傳至任何伺服器。這代表資料不會自動在裝置之間同步，<strong>刪除 App 時本地資料也會一併移除</strong>。請養成定期使用 ZIP 匯出功能備份的習慣，或利用 iPhone 的裝置備份轉移。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>可以匯出哪些格式？各適合什麼用途？</h3>
+            <p>單段錄音可直接分享 .m4a 檔；點位基本資料可匯出為文字檔；整個點位或整個專案可打包成 ZIP（內含摘要、所有照片與錄音），適合備份、交接或透過 AirDrop、雲端硬碟分享。體驗版執行完整 ZIP 匯出前需觀看一支獎勵式廣告，標準版免廣告。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>沒有網路連線可以使用嗎？</h3>
+            <p>可以。記錄、拍照、錄音、GPS 座標取得、內建環境圖資與檔案匯出都在裝置本機完成，不需要網路。兩個例外：<strong>線上地圖底圖</strong>需要連線才能載入（先前瀏覽過的區域會保留快取，離線時仍畫得出來），以及<strong>體驗版的獎勵式廣告</strong>與<strong>購買標準版</strong>需要網路。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>內建的環境圖資是什麼？資料從哪裡來？</h3>
+            <p>App 內建 21 個臺灣生態環境圖層（如自然保留區、保安林、國土生態綠網、石虎分布模擬等），由政府開放資料轉製而成，來源包括農業部林業及自然保育署、生物多樣性研究所等單位。圖資直接內建於 App，離線即可疊加使用；各圖層的原始來源可在 App 內的圖資資訊頁查看。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>座標跳轉支援哪些格式？</h3>
+            <p>支援 WGS84 經緯度（十進位與度分秒皆可）以及 TWD97 二度分帶（TM2）座標。輸入後會先顯示預覽面板確認位置，再決定是否跳轉或建立點位。此功能完全免費、不限次數（不支援 TWD67）。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>體驗版與標準版差在哪裡？</h3>
+            <p>兩者的差異包含專案數量、每專案點位數量、每點位照片與錄音數量，以及完整 ZIP 匯出是否需要觀看廣告。標準版並提供完全無廣告體驗。完整比較請參閱<a href="index.html#feature-compare">功能對照表</a>。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>換了新裝置，之前買的標準版要怎麼恢復？</h3>
+            <p>請在 App 內的升級頁面點選「恢復購買」（設定頁面中也提供相同功能）。恢復購買需登入與當初購買時相同的 Apple ID，購買紀錄由 Apple 帳號保管，與裝置無關。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>GPS 座標抓不到或不夠精確怎麼辦？</h3>
+            <p>建議在較開闊處等待定位穩定後再新增點位。若現場受樹冠、建物或地形遮蔽導致座標偏移，可在點位資料中手動微調座標值，確保每一筆紀錄的位置都精準。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>可以在 iPad 上使用嗎？</h3>
+            <p>可以安裝並使用完整功能，但目前介面是針對 iPhone 進行最佳化，尚未針對大螢幕做專屬佈局。若追求最流暢的記錄體驗，建議使用 iPhone。</p>
+        </div>
+
+        <h2>系統需求</h2>
+        <table class="spec-table">
+            <tbody>
+                <tr>
+                    <th>作業系統需求</th>
+                    <td>iOS 18.3 以上</td>
+                </tr>
+                <tr>
+                    <th>支援裝置</th>
+                    <td>iPhone（最佳化）、iPad（可執行完整功能，介面未針對大螢幕最佳化）</td>
+                </tr>
+                <tr>
+                    <th>網路需求</th>
+                    <td>記錄、拍照、錄音、座標、內建環境圖資與匯出等核心功能無須連線；線上地圖底圖載入、體驗版廣告與購買需要網路</td>
+                </tr>
+                <tr>
+                    <th>權限需求</th>
+                    <td>定位（記錄座標）、相機與照片（現場拍攝與附圖）、麥克風（現場錄音）</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>回報問題時請提供的資訊</h2>
+        <p>為了縮短來回確認的時間，回報問題時麻煩一併提供下列資訊：</p>
+        <ul>
+            <li>裝置型號（例如 iPhone 15 Pro Max）</li>
+            <li>iOS 版本（設定 &gt; 一般 &gt; 關於本機）</li>
+            <li>memoland 版本（點擊主畫面頂端的 memoland 圖示，開啟「關於」頁面即可查看）</li>
+            <li>問題發生的步驟，以及是否可以重複發生</li>
+            <li>若畫面異常，請附上截圖</li>
+        </ul>
+
+        <div class="page-links">
+            <a href="index.html">產品介紹</a>　|　<a href="privacy.html">隱私權政策</a>
+        </div>
+
+        <div class="footer">
+            © 2026 Designed by Denis<br>
+            All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

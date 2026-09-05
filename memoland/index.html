@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memoland：您的行動地圖筆記本</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.8; 
+            color: #333; 
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 40px 25px; 
+            background-color: #F4F7F9;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+    
+    .header-section {
+        text-align: center; 
+        margin-bottom: 40px;
+    }
+
+    .app-logo {
+        width: 120px; 
+        height: auto;
+        margin-bottom: 15px;
+    }
+        h1 { color: #1B2635; border-bottom: 3px solid #FF6D38; padding-bottom: 15px; margin: 0; }
+        h2 { color: #184E95; margin-top: 35px; font-size: 1.4em; border-left: 5px solid #184E95; padding-left: 15px; }
+        h3 { color: #4A7FC1; margin-top: 25px; font-size: 1.2em; }
+        p, li { color: #555; }
+        ul { padding-left: 20px; }
+        strong { color: #333; }
+        .intro-text {
+    border-left: 4px solid #FF6D38;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-size: 1.1em;
+    background: transparent;
+}
+        .note-section { margin-top: 40px; margin-bottom: 40px; padding: 20px; background-color: #EAF1F8; border-radius: 8px; font-size: 0.9em; }
+        .note-item { margin-bottom: 8px; color: #666; }
+        .last-updated { color: #999; font-size: 0.9em; margin-bottom: 30px; }
+/* 功能對照表專屬樣式 */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    font-size: 0.95em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.comparison-table th {
+    background-color: #184E95;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+.comparison-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.comparison-table tr:nth-child(even) {
+    background-color: #FBFCFD;
+}
+.comparison-table .feature-name {
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+    width: 30%;
+}
+.comparison-table .premium-col {
+    background-color: #FCEEE9;
+    font-weight: bold;
+    color: #C2491A;
+}
+.check-icon {
+    color: #E85A24;
+    font-weight: bold;
+}
+        /* 頁面互連：置中、無底色，使用通用連結藍 */
+        .page-links {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+        .page-links a { color: #1C74BD; }
+        .page-links a:hover { color: #155E9B; text-decoration: underline; }
+        .footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center;
+            color: #7f8c8d;
+        }
+        a { color: #184E95; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #FF6D38;
+            color: white !important;
+            border-radius: 30px;
+            text-decoration: none !important;
+            font-size: 1.1em;
+            transition: transform 0.2s;
+        }
+        .contact-btn:hover {
+            transform: scale(1.05);
+            background-color: #E85A24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <img src="../assets/images/memoland-logo.svg" alt="memoland Logo" class="app-logo">
+            <h1>memoland：您的行動地圖筆記本</h1>
+        </div>
+        <p class="last-updated">最近更新日期：2026年9月6日</p>
+
+        <div class="intro-text">
+            專為戶外勘旅者、生活紀錄者與田野工作者設計。<br>
+我們將地點、照片、錄音與筆記整合為一本隨身的地圖筆記本，讓每一次外出的所見所聞，都留在它發生的位置上。
+        </div>
+
+        <h2>memoland 核心價值</h2>
+        
+        <h3>1. 【點一下地圖，筆記就開始】</h3>
+        <p>在地圖上輕點即建立點位，自動擷取 GPS 座標。標題、備註、照片、錄音一次記齊，所有紀錄都釘在地圖上，回顧時一目了然。</p>
+
+        <h3>2. 【照片與錄音，替你留住現場】</h3>
+        <p>每個點位都能保存多張現場照片與多段錄音。不方便打字時，按下錄音直接用說的；內建迷你播放器，隨點隨聽。</p>
+
+        <h3>3. 【內建臺灣環境圖資，離線疊加】</h3>
+        <p>內建 21 個由政府開放資料轉製的生態環境圖層（自然保留區、保安林、國土生態綠網、石虎分布模擬等），可自由開關疊加在地圖上，完全離線可用，外勤現場直接比對。</p>
+
+        <h3>4. 【座標跳轉，支援 TWD97】</h3>
+        <p>貼上 WGS84（十進位、度分秒）或 TWD97 二度分帶座標，立即預覽並跳轉到目標位置。臺灣在地工作流無縫接軌，完全免費、不限次數。</p>
+
+        <h3>5. 【一鍵 ZIP 打包，交接零阻力】</h3>
+        <p>從單段錄音、單個點位到整個專案，都能打包成 ZIP，透過 AirDrop 或雲端直接分享。備份、交接、彙整報告，收工即完成。</p>
+
+        <h2>版本分級，滿足您的不同需求</h2>
+        <ul>
+            <li><strong>體驗版 (Free)：</strong>免費使用完整記錄功能、座標跳轉與全部環境圖資，內建基礎配額，可透過觀看廣告，有限度地擴增專案、點位與媒體數量。</li>
+            <li><strong>標準版 (Standard)：</strong>一次性買斷。完全無廣告，專案與點位數量皆無限制(註1)，單一點位可保存更多照片與錄音，ZIP 完整匯出免廣告(註2)，專為長期記錄的專業用戶設計。</li>
+        </ul>
+
+<h2 id="feature-compare">memoland 功能對照表</h2>
+<table class="comparison-table">
+    <thead>
+        <tr>
+            <th>功能模組</th>
+            <th>體驗版 (Free)</th>
+            <th>標準版 (Standard)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="feature-name">廣告體驗</td>
+            <td>進階操作時觀看獎勵式廣告<br>（無橫幅廣告，主畫面保持乾淨）</td>
+            <td class="premium-col">完全無廣告，清爽作業</td>
+        </tr>
+        <tr>
+            <td class="feature-name">專案數量</td>
+            <td>基礎 3 個 (觀看廣告擴增至 5 個)</td>
+            <td class="premium-col">無限制數量(註1)</td>
+        </tr>
+        <tr>
+            <td class="feature-name">點位數量 (單一專案)</td>
+            <td>基礎 5 個 (觀看廣告擴增至 10 個)</td>
+            <td class="premium-col">無限制數量(註1)</td>
+        </tr>
+        <tr>
+            <td class="feature-name">照片 (單一點位)</td>
+            <td>2 張 (觀看廣告擴增至 6 張)</td>
+            <td class="premium-col">20 張</td>
+        </tr>
+        <tr>
+            <td class="feature-name">錄音 (單一點位)</td>
+            <td>2 段 (觀看廣告擴增至 5 段)</td>
+            <td class="premium-col">10 段</td>
+        </tr>
+        <tr>
+            <td class="feature-name">完整 ZIP 匯出</td>
+            <td>每次匯出前觀看廣告(註2)</td>
+            <td class="premium-col"><span class="check-icon">✔</span> 免廣告，不限次數</td>
+        </tr>
+        <tr>
+            <td class="feature-name">座標跳轉 (含 TWD97)</td>
+            <td><span class="check-icon">✔</span> 完整開放</td>
+            <td class="premium-col"><span class="check-icon">✔</span> 完整開放</td>
+        </tr>
+        <tr>
+            <td class="feature-name">環境圖資疊加</td>
+            <td><span class="check-icon">✔</span> 全部圖層開放</td>
+            <td class="premium-col"><span class="check-icon">✔</span> 全部圖層開放</td>
+        </tr>
+    </tbody>
+</table>
+
+        <div class="note-section">
+            <div class="note-item">(註1) 「無限制」項目仍受裝置本身記憶體與儲存容量的安全限制，可能存在實務上限。</div>
+            <div class="note-item">(註2) 單一檔案匯出（單張照片、單段錄音、點位基本資料）不需觀看廣告；「完整 ZIP 匯出」指點位完整打包、專案完整打包與批次打包三種匯出方式。</div>
+            <div class="note-item">(註3) memoland 目前優先針對 iPhone 進行操作體驗優化。雖然本 App 可以在 iPad 上安裝並使用完整功能，但介面尚未針對大螢幕顯示進行專屬佈局最佳化。我們建議使用 iPhone 以獲得最流暢的記錄體驗。</div>
+        </div>
+
+        <div style="text-align: center;">
+            <p>有任何建議或合作需求？ 歡迎與我們聯絡</p>
+            <a href="https://forms.gle/nmDyok7FLxBcfENi7" class="contact-btn">聯繫我們</a>
+        </div>
+
+        <div class="page-links">
+            <a href="support.html">技術支援</a>　|　<a href="privacy.html">隱私權政策</a>
+        </div>
+
+        <div class="footer">
+            © 2026 Designed by Denis<br>
+            All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
