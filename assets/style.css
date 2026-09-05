@@ -1,0 +1,255 @@
+/* ==========================================================================
+   denischencj.github.io — 共用樣式
+   所有頁面（根目錄 index、各 App 子頁）皆引用此檔
+   子目錄頁面請用 ../assets/style.css 引用
+   ========================================================================== */
+
+:root {
+  --paper:   #FBFBF9;
+  --ink:     #16211B;
+  --muted:   #5F6E64;
+  --rule:    #DCE1DA;
+  --accent:  #47662F;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+               "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+                "Songti TC", "Times New Roman", serif;
+
+  --measure: 36rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:  #131A15;
+    --ink:    #E7EBE3;
+    --muted:  #98A69C;
+    --rule:   #2A342C;
+    --accent: #9FBE73;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- 版面容器 ---------------------------------------------------------- */
+
+.sheet {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+}
+
+/* --- 頁首 -------------------------------------------------------------- */
+
+.masthead {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.tagline-en {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* --- 區段標題 ---------------------------------------------------------- */
+
+h2 {
+  margin: 3.5rem 0 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+h2 .gloss {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  margin-left: 0.35rem;
+}
+
+/* --- 應用程式條目 ------------------------------------------------------ */
+
+.entry {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry + .entry { padding-top: 2.25rem; }
+
+.entry-icon {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  border: 1px solid var(--rule);
+}
+
+.entry-body { min-width: 0; }
+
+.entry-body h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+}
+
+.entry-zh {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  margin-left: 0.4rem;
+}
+
+.entry-desc {
+  margin: 0 0 0.6rem;
+  font-size: 0.9375rem;
+}
+
+.entry-desc-en {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* 標本鑑定標籤：學名排版示例（屬名種小名斜體、命名者正體） */
+.specimen {
+  margin: 1.25rem 0 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.specimen i { font-style: italic; }
+
+/* --- 條目連結 ---------------------------------------------------------- */
+
+.entry-links {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  font-size: 0.9375rem;
+}
+
+/* --- 聯絡 -------------------------------------------------------------- */
+
+.contact p { margin: 0; font-size: 0.9375rem; }
+
+.contact-note {
+  margin-top: 0.5rem !important;
+  color: var(--muted);
+  font-size: 0.875rem !important;
+}
+
+/* --- 連結 -------------------------------------------------------------- */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover { border-bottom-color: var(--accent); }
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- 頁尾 -------------------------------------------------------------- */
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+footer p { margin: 0; }
+
+/* --- 內文頁（隱私權、支援）共用 ---------------------------------------- */
+
+.doc h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.doc .updated {
+  margin: 0 0 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.doc h2 {
+  margin: 2.75rem 0 0.75rem;
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+.doc p, .doc li { font-size: 0.9375rem; }
+
+.doc ul { padding-left: 1.25rem; }
+
+.doc li { margin-bottom: 0.4rem; }
+
+.backlink {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-size: 0.875rem;
+}
+
+/* --- 窄螢幕 ------------------------------------------------------------ */
+
+@media (max-width: 480px) {
+  .sheet { padding-top: 3rem; }
+
+  .entry {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .entry-icon { width: 60px; height: 60px; border-radius: 13px; }
+}
