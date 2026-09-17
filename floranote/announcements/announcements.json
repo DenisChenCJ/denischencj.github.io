@@ -5,7 +5,7 @@
       "id": "v1-7-2-release",
       "title": "最新版本更新內容",
       "publishDate": "2026-09-16",
-      "endDate": "2027-12-31",
+      "endDate": "2026-09-16",
       "priority": 100,
       "minAppVersion": null,
       "image": null,
@@ -22,6 +22,26 @@
             "自行新增或編輯過的植物項目會額外標記，與內建植物項目區隔。",
             "效能與穩定性改善，照片更省空間、列表瀏覽更流暢、地圖顯示更準確。"
           ]
+        }
+      ],
+      "button": null
+    },
+    {
+      "id": "test01",
+      "title": "這是測試公告",
+      "publishDate": "2026-09-17",
+      "endDate": "2026-09-20",
+      "priority": 99,
+      "minAppVersion": null,
+      "image": null,
+      "body": [
+        {
+          "type": "heading",
+          "text": "這是測試公告"
+        },
+        {
+          "type": "paragraph",
+          "text": "這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告"
         }
       ],
       "button": null
