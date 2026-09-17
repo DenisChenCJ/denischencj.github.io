@@ -5,7 +5,7 @@
       "id": "v1-7-2-release",
       "title": "最新版本更新內容",
       "publishDate": "2026-09-16",
-      "endDate": "2026-09-16",
+      "endDate": "2026-09-30",
       "priority": 100,
       "minAppVersion": null,
       "image": null,
@@ -42,6 +42,22 @@
         {
           "type": "paragraph",
           "text": "這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告"
+        }
+      ],
+      "button": null
+    },
+    {
+      "id": "test02",
+      "title": "再一個測試公告",
+      "publishDate": "2026-09-17",
+      "endDate": "2026-09-17",
+      "priority": 99,
+      "minAppVersion": null,
+      "image": null,
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告 再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告 再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告 再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告"
         }
       ],
       "button": null
