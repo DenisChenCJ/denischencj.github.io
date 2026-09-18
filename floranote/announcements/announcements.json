@@ -81,6 +81,26 @@
         }
       ],
       "button": null
+    },
+    {
+      "id": "test04",
+      "title": "測試圖片",
+      "publishDate": "2026-09-18",
+      "endDate": "2026-09-18",
+      "priority": 0,
+      "minAppVersion": null,
+      "image": "images/test.jpg",
+      "body": [
+        {
+          "type": "heading",
+          "text": "測試圖片"
+        },
+        {
+          "type": "paragraph",
+          "text": "測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 "
+        }
+      ],
+      "button": null
     }
   ]
 }
