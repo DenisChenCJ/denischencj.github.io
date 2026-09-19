@@ -27,84 +27,8 @@
       "button": null
     },
     {
-      "id": "test01",
-      "title": "這是測試公告",
-      "publishDate": "2026-09-17",
-      "endDate": "2026-09-10",
-      "priority": 99,
-      "minAppVersion": null,
-      "image": null,
-      "body": [
-        {
-          "type": "heading",
-          "text": "這是測試公告"
-        },
-        {
-          "type": "paragraph",
-          "text": "這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告\n這是測試公告"
-        }
-      ],
-      "button": null
-    },
-    {
-      "id": "test02",
-      "title": "再一個測試公告",
-      "publishDate": "2026-09-17",
-      "endDate": "2026-09-18",
-      "priority": 99,
-      "minAppVersion": null,
-      "image": null,
-      "body": [
-        {
-          "type": "paragraph",
-          "text": "再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告 再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告 再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告 再一個測試公告 再一個測試公告再一個測試公告 再一個測試公告"
-        }
-      ],
-      "button": null
-    },
-    {
-      "id": "test03",
-      "title": "3分鐘測試",
-      "publishDate": "2026-09-18",
-      "endDate": "2026-09-10",
-      "priority": 0,
-      "minAppVersion": null,
-      "image": null,
-      "body": [
-        {
-          "type": "heading",
-          "text": "3分鐘測試 3分鐘測試 "
-        },
-        {
-          "type": "paragraph",
-          "text": "3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 3分鐘測試 "
-        }
-      ],
-      "button": null
-    },
-    {
-      "id": "test04",
-      "title": "修正 1（冷啟動寬限）測試圖片",
-      "publishDate": "2026-09-18",
-      "endDate": "2026-09-29",
-      "priority": 0,
-      "minAppVersion": null,
-      "image": "images/test.jpg",
-      "body": [
-        {
-          "type": "heading",
-          "text": "修正 1（冷啟動寬限）測試圖片"
-        },
-        {
-          "type": "paragraph",
-          "text": "測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 測試圖片 "
-        }
-      ],
-      "button": null
-    },
-    {
       "id": "test05",
-      "title": "30分鐘快取測試",
+      "title": "30分鐘快取測試 一天後",
       "publishDate": "2026-09-20",
       "endDate": "2026-10-20",
       "priority": 0,
@@ -113,7 +37,7 @@
       "body": [
         {
           "type": "heading",
-          "text": "30分鐘快取測試 "
+          "text": "30分鐘快取測試 一天後"
         },
         {
           "type": "paragraph",
