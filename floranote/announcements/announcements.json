@@ -33,11 +33,14 @@
       "endDate": "2026-10-20",
       "priority": 0,
       "minAppVersion": null,
-      "image": null,
+      "image": "images/test.jpg",
       "body": [
         {
           "type": "heading",
           "text": "30分鐘快取測試 一天後"
+        },
+        {
+          "type": "image"
         },
         {
           "type": "paragraph",
