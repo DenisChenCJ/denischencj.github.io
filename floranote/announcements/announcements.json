@@ -50,7 +50,7 @@
       "id": "test06",
       "title": "再測試一次 30 分鐘跟照片",
       "publishDate": "2026-09-20",
-      "endDate": "2026-09-30",
+      "endDate": "2026-09-20",
       "priority": 2,
       "minAppVersion": null,
       "image": "images/test.jpg",
@@ -62,6 +62,30 @@
         {
           "type": "heading",
           "text": "最後一次測試 30 分鐘"
+        }
+      ],
+      "button": null
+    },
+    {
+      "id": "test07",
+      "title": "測試今天到期",
+      "publishDate": "2026-09-22",
+      "endDate": "2026-09-22",
+      "priority": 4,
+      "minAppVersion": null,
+      "image": null,
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 測試今天到期 "
+        },
+        {
+          "type": "list",
+          "items": [
+            "測試今天到期 ",
+            "測試今天到期 ",
+            "測試今天到期 "
+          ]
         }
       ],
       "button": null
