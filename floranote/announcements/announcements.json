@@ -5,7 +5,7 @@
       "id": "v1-7-2-release",
       "title": "最新版本更新內容",
       "publishDate": "2026-09-16",
-      "endDate": "2026-09-30",
+      "endDate": "2026-09-22",
       "priority": 100,
       "minAppVersion": null,
       "image": null,
@@ -30,17 +30,14 @@
       "id": "test05",
       "title": "30分鐘快取測試 一天後",
       "publishDate": "2026-09-20",
-      "endDate": "2026-10-20",
+      "endDate": "2026-09-22",
       "priority": 0,
       "minAppVersion": null,
-      "image": "images/test.jpg",
+      "image": null,
       "body": [
         {
           "type": "heading",
           "text": "30分鐘快取測試 一天後"
-        },
-        {
-          "type": "image"
         },
         {
           "type": "paragraph",
@@ -51,20 +48,23 @@
     },
     {
       "id": "test06",
-      "title": "再測試一次 30 分鐘跟照片",
+      "title": "測試圖片位置",
       "publishDate": "2026-09-20",
-      "endDate": "2026-09-20",
+      "endDate": "2026-09-23",
       "priority": 2,
       "minAppVersion": null,
       "image": "images/test.jpg",
       "body": [
         {
-          "type": "paragraph",
-          "text": "再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 再測試一次 30 分鐘跟照片 "
+          "type": "heading",
+          "text": "測試圖片位置"
         },
         {
-          "type": "heading",
-          "text": "最後一次測試 30 分鐘"
+          "type": "image"
+        },
+        {
+          "type": "paragraph",
+          "text": "測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 "
         }
       ],
       "button": null
