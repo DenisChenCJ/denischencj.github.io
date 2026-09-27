@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "announcements": [
+    {
+      "id": "20260927-01",
+      "title": "測試公告（尚未替換為正式內容）",
+      "publishDate": "2026-09-27",
+      "endDate": "2026-12-31",
+      "priority": 100,
+      "minAppVersion": null,
+      "image": null,
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "這是 memoland 公告機制的第一則測試內容，用來確認 App 端能正確讀取、顯示與關閉公告。"
+        },
+        {
+          "type": "heading",
+          "text": "送審前必須替換"
+        },
+        {
+          "type": "list",
+          "items": [
+            "送審期間站上必須有一則生效中的真實公告，否則審核員點進去是空的。",
+            "測試新內容時請一律使用新的 id（YYYYMMDD-NN），「不再顯示」是綁 id 的永久紀錄，改日期不會讓它回來。"
+          ]
+        }
+      ],
+      "button": null
+    }
+  ]
+}
