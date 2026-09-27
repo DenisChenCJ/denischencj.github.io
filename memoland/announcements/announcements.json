@@ -2,6 +2,33 @@
   "schemaVersion": 1,
   "announcements": [
     {
+      "id": "20260927-02",
+      "title": "圖片顯示測試",
+      "publishDate": "2026-09-27",
+      "endDate": "2026-12-31",
+      "priority": 110,
+      "minAppVersion": null,
+      "image": "images/20260927-02.jpg",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "這則公告帶一張圖，用來確認下載、縮放取樣、快取與顯示整條路徑都正常。圖片來源是站台上的相對路徑，App 端只接受相對路徑，帶網域或以斜線開頭的一律拒絕。"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "heading",
+          "text": "這張圖後面還有文字"
+        },
+        {
+          "type": "paragraph",
+          "text": "內文裡的 image 區塊只標位置、不帶路徑，路徑一律取自公告的 image 欄位——所以「一則最多一張圖」是結構上保證的，不是靠規則約束。"
+        }
+      ],
+      "button": null
+    },
+    {
       "id": "20260927-01",
       "title": "測試公告（尚未替換為正式內容）",
       "publishDate": "2026-09-27",
