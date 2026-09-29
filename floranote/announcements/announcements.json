@@ -49,6 +49,26 @@
         }
       ],
       "button": null
+    },
+    {
+      "id": "20260930-01",
+      "title": "測試按鈕功能",
+      "publishDate": "2026-09-30",
+      "endDate": "2026-09-30",
+      "priority": 0,
+      "minAppVersion": null,
+      "image": null,
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 "
+        }
+      ],
+      "button": {
+        "title": "了解標準版",
+        "action": "upgrade",
+        "value": null
+      }
     }
   ]
 }
