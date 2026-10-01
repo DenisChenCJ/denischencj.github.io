@@ -26,49 +26,6 @@
         }
       ],
       "button": null
-    },
-    {
-      "id": "test06",
-      "title": "測試圖片位置",
-      "publishDate": "2026-09-20",
-      "endDate": "2026-09-27",
-      "priority": 2,
-      "minAppVersion": null,
-      "image": "images/test.jpg",
-      "body": [
-        {
-          "type": "heading",
-          "text": "測試圖片位置"
-        },
-        {
-          "type": "image"
-        },
-        {
-          "type": "paragraph",
-          "text": "測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 測試圖片位置 "
-        }
-      ],
-      "button": null
-    },
-    {
-      "id": "20260930-01",
-      "title": "測試按鈕功能",
-      "publishDate": "2026-09-30",
-      "endDate": "2026-09-30",
-      "priority": 0,
-      "minAppVersion": null,
-      "image": null,
-      "body": [
-        {
-          "type": "paragraph",
-          "text": "測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 測試按鈕功能 "
-        }
-      ],
-      "button": {
-        "title": "了解標準版",
-        "action": "upgrade",
-        "value": null
-      }
     }
   ]
 }
