@@ -3,19 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Denis Chen — iOS 應用程式開發</title>
-<meta name="description" content="為田野調查與自然科學工作者開發 iOS 應用程式。FloraNote 植物調查筆記。">
-<link rel="icon" href="assets/images/favicon.png">
+<title>Denis Chen — 獨立開發者</title>
+<meta name="description" content="獨立開發者 Denis Chen 的應用程式：FloraNote 植物調查筆記、memoland 地圖筆記本。">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="assets/images/favicon.png" sizes="256x256">
+<link rel="apple-touch-icon" href="assets/images/favicon.png">
+<link rel="preload" href="assets/fonts/parisienne-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('aurora-on');</script>
 </head>
 <body>
+
+<!-- 七色光譜條＋往下暈開的極光：顏色與速度在 style.css 的 --spec-1 ~ --spec-7、--spectrum-speed；
+     極光的形狀與亮度在 assets/aurora.js 開頭的 TUNE。
+     光譜條在頁面頂端時隱藏（極光本身就是它），往下捲、極光離開畫面時才淡入 -->
+<div class="spectrum" aria-hidden="true"></div>
+<canvas class="aurora" aria-hidden="true"></canvas>
 
 <div class="sheet">
 
   <header class="masthead">
+    <p class="slogan" lang="en">Where there’s a will, there’s a way</p>
     <h1>Denis Chen</h1>
-    <p class="tagline">為田野調查與自然科學工作者開發 iOS 應用程式</p>
-    <p class="tagline-en">iOS apps for field survey and natural science work.</p>
+    <p class="tagline">獨立開發者。從構想、設計到上架</p>
+    <p class="tagline-en">Independent developer. From idea and design to launch.</p>
   </header>
 
   <main>
@@ -23,21 +35,53 @@
     <section class="apps" aria-labelledby="apps-heading">
       <h2 id="apps-heading">應用程式 <span class="gloss">Apps</span></h2>
 
-      <!-- 每新增一個 App，複製一份 <article class="entry"> 區塊即可 -->
-      <article class="entry">
+      <!-- 每新增一個 App，複製一份 <article class="entry"> 區塊即可；
+           data-app 對應 style.css 裡的專屬強調色。
+           標題寫 App Store 上的完整名稱，同一字級、同一粗細 -->
+      <article class="entry" data-app="floranote">
         <img class="entry-icon" src="assets/images/floranote-icon.png" alt="FloraNote 應用程式圖示" width="72" height="72">
         <div class="entry-body">
-          <h3>FloraNote <span class="entry-zh">植物調查筆記</span></h3>
+          <h3>FloraNote 植物調查筆記</h3>
 
           <p class="entry-desc">離線植物調查記錄工具。內建 1,670 筆臺灣植物名錄，可記錄 GPS 座標與現場照片，並匯出為 RTF、CSV 或 GeoJSON。全程不需網路連線，適合野外使用。</p>
           <p class="entry-desc-en">An offline plant survey notebook for the field. Built-in checklist of 1,670 Taiwanese plants, GPS and photo capture, export to RTF, CSV and GeoJSON.</p>
 
-          <p class="specimen"><i>Cinnamomum kanehirae</i> Hayata　牛樟　樟科</p>
+          <!-- 暫時隱藏（保留備用）：拿掉 hidden 就會顯示 -->
+          <p class="specimen" hidden><i>Cinnamomum kanehirae</i> Hayata　牛樟　樟科</p>
 
           <ul class="entry-links">
-            <li><a href="https://apps.apple.com/app/id6747736389">App Store</a></li>
+            <li><a href="floranote/index.html">介紹</a></li>
             <li><a href="floranote/privacy.html">隱私權政策</a></li>
             <li><a href="floranote/support.html">技術支援</a></li>
+          </ul>
+
+          <ul class="store-badges">
+            <li><a href="https://apps.apple.com/app/id6747736389"><img src="assets/images/app-store-badge-zh-tw.svg" alt="在 App Store 下載 FloraNote" width="109" height="40"></a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry" data-app="memoland">
+        <img class="entry-icon" src="assets/images/memoland-icon.png" alt="memoland 應用程式圖示" width="72" height="72">
+        <div class="entry-body">
+          <h3>memoland 地圖筆記本</h3>
+
+          <p class="entry-desc">隨身的地圖筆記本。長按地圖即建立點位，筆記、錄音與照片全都記在你的主題地圖裡。內建 13 個由政府開放資料轉製的臺灣生態環境圖層，支援 WGS84 與 TWD97 座標跳轉，可離線使用，整個主題也能打包成 ZIP 分享。</p>
+          <p class="entry-desc-en">A map notebook you carry everywhere. Long-press the map to drop a pin and keep notes, voice memos and photos where they happened. 13 built-in Taiwan environmental layers, WGS84 and TWD97 coordinate jump, works offline, exports as ZIP.</p>
+
+          <!-- 與 FloraNote 的標本標籤對應：同一個台南點位的三種座標寫法（與 App 內的範例一致）。
+               暫時隱藏（保留備用）：拿掉 hidden 就會顯示 -->
+          <p class="specimen coords" hidden><span>22.9906, 120.2022</span><span>22°59′26.2″N 120°12′07.9″E</span><span>TWD97 168208, 2543465</span></p>
+
+          <ul class="entry-links">
+            <li><a href="memoland/index.html">介紹</a></li>
+            <li><a href="memoland/privacy.html">隱私權政策</a></li>
+            <li><a href="memoland/support.html">技術支援</a></li>
+          </ul>
+
+          <!-- Apple 只授權徽章用在「已在 App Store 上架」的 App：memoland 上架後拿掉 hidden -->
+          <ul class="store-badges" hidden>
+            <li><a href="https://apps.apple.com/app/id6817054906"><img src="assets/images/app-store-badge-zh-tw.svg" alt="在 App Store 下載 memoland" width="109" height="40"></a></li>
           </ul>
         </div>
       </article>
@@ -47,16 +91,21 @@
     <section class="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">聯絡 <span class="gloss">Contact</span></h2>
       <p><a href="mailto:gtr6gb836@gmail.com">gtr6gb836@gmail.com</a></p>
-      <p class="contact-note">應用程式相關問題、錯誤回報與植物名錄勘誤，歡迎來信。</p>
+      <p class="contact-note">應用程式相關問題、錯誤回報或任何建議，歡迎來信。</p>
     </section>
 
   </main>
 
   <footer>
     <p>© 2026 Denis Chen</p>
+    <p class="legal">
+      <span>Apple 與 Apple 標誌是 Apple Inc. 在美國及其他國家和地區註冊的商標。</span>
+      <span>App Store 是 Apple Inc. 的服務標記。</span>
+    </p>
   </footer>
 
 </div>
 
+<script src="assets/aurora.js" defer></script>
 </body>
 </html>

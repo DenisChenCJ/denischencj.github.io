@@ -54,6 +54,31 @@
             text-align: center;
             color: #7f8c8d;
         }
+        /* 頁尾的 Denis：回到總介紹頁。文字與底線共用同一條漸層，
+           與 App 內「分享 FloraNote」按鈕同一條漸層：黃 → 咖啡 → 紅 → 綠（P03 ShareAppLink.swift） */
+        .footer a.home-link { position: relative; color: #F1C40F; }
+        .footer a.home-link, .footer a.home-link:hover { text-decoration: none; }
+        @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+            .footer a.home-link {
+                background-image: linear-gradient(90deg, #F1C40F, #A56B28, #E7393C, #3D9A3D);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
+        }
+        /* 底線用偽元素畫，才能和文字一樣是漸層（text-decoration 只能單色） */
+        .footer a.home-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 1.5px;
+            background-image: linear-gradient(90deg, #F1C40F, #A56B28, #E7393C, #3D9A3D);
+        }
+        .footer a.home-link:hover { opacity: 0.75; }
+
         a { color: #f1c40f; text-decoration: none; font-weight: bold; }
         a:hover { text-decoration: underline; }
         .contact-btn {
@@ -145,7 +170,7 @@
         </div>
 
         <div class="footer">
-            © 2026 Designed by Denis<br>
+            © 2026 Designed by <a class="home-link" href="../">Denis</a><br>
             All rights reserved.
         </div>
     </div>

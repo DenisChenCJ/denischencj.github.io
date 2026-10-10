@@ -4,14 +4,18 @@
    子目錄頁面請用 ../assets/style.css 引用
    ========================================================================== */
 
+/* 首頁固定黑底，不隨系統切換（極光需要黑色才看得出層次）。
+   各 App 子頁是自己的內嵌樣式、固定淺底，不引用本檔。 */
 :root {
-  --paper:   #FBFBF9;
-  --ink:     #16211B;
-  --muted:   #5F6E64;
-  --rule:    #DCE1DA;
-  --accent:  #47662F;
-  --link:    #1C74BD;
-  --link-hover: #155E9B;
+  color-scheme: dark;
+
+  --paper:   #000000;
+  --ink:     #ECECEC;
+  --muted:   #9C9CA1;
+  --rule:    #26262A;
+  --accent:  #9FBE73;
+  --link:    #63AEE4;
+  --link-hover: #8AC4F0;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
                "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
@@ -19,21 +23,41 @@
                 "Songti TC", "Times New Roman", serif;
 
   --measure: 36rem;
+
+  /* 七色光譜：兩個 App 的自訂顏色，依色相排成彩虹（首尾相接、循環流動）
+     來源：P01 AppAssets.swift、P03 ImageAssets.swift
+     極光（aurora.js）也讀這七個值，改這裡兩邊一起變 */
+  --spec-1: #E7393C;   /* FloraNote 紅   redButtonColor */
+  --spec-2: #FF6D38;   /* memoland  橘   appAccent */
+  --spec-3: #F1C40F;   /* FloraNote 黃   yellowButtonColor */
+  --spec-4: #3D9A3D;   /* FloraNote 綠   plantRecordCountColor */
+  --spec-5: #ACD1E6;   /* memoland  淡藍 appMutedBlue */
+  --spec-6: #184E95;   /* memoland  藍   appSlate */
+  --spec-7: #A56B28;   /* FloraNote 咖啡 coffeeBackgroundColor */
+
+  --spectrum-h: 5px;        /* 光譜條高度 */
+  --spectrum-speed: 14s;    /* 流動一圈的時間（極光跟著同一個時鐘） */
+
+  /* 各 App 專屬強調色（條目裡的引文邊線用） */
+  --floranote: #3D9A3D;
+  --memoland:  #FF6D38;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper:  #131A15;
-    --ink:    #E7EBE3;
-    --muted:  #98A69C;
-    --rule:   #2A342C;
-    --accent: #9FBE73;
-    --link:   #63AEE4;
-    --link-hover: #8AC4F0;
-  }
+/* Slogan 用的書寫體。字型檔放在站台內，不外連 Google，授權見 assets/fonts/Parisienne-OFL.txt */
+@font-face {
+  font-family: "Parisienne";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/parisienne-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+                 U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+/* 有 hidden 屬性就一定隱藏，不被 .coords 之類的 display 設定蓋掉 */
+[hidden] { display: none !important; }
 
 html { -webkit-text-size-adjust: 100%; }
 
@@ -47,9 +71,72 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* --- 七色光譜條 -------------------------------------------------------- */
+/* 放在 body 第一個子元素，貼齊視窗最頂端、捲動時固定。
+   漸層以 --spec-1 開頭也以 --spec-1 結尾；偽元素寬度兩倍、背景平鋪兩份，
+   再用 transform 位移自身一半，所以循環的接縫看不出來。 */
+
+.spectrum {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--spectrum-h);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 有極光時：頁面頂端先隱藏（極光就是它），aurora.js 依捲動距離把 --bar-o 從 0 拉到 1。
+   沒有 JS 或畫不出極光時沒有 aurora-on，光譜條照常顯示。 */
+.aurora-on .spectrum { opacity: var(--bar-o, 0); }
+
+.spectrum::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-image: linear-gradient(90deg,
+    var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4),
+    var(--spec-5), var(--spec-6), var(--spec-7), var(--spec-1));
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: spectrum-flow var(--spectrum-speed) linear infinite;
+  will-change: transform;
+}
+
+@keyframes spectrum-flow {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* --- 極光 -------------------------------------------------------------- */
+/* 光譜條往下暈開的光幕，由 assets/aurora.js 逐格繪製。
+   貼在頁面頂端、隨頁面捲走（不固定在視窗上，往下讀內文時不干擾）。
+   畫布解析度刻意很低，交給瀏覽器放大，放大本身就是柔化。 */
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  /* 大部分垂幕約畫面高度的 1/8，少數長舌可伸到約 1/3（長短在 aurora.js 的 colLen） */
+  height: clamp(300px, 48vh, 540px);
+  height: clamp(300px, 48svh, 540px);   /* iOS 工具列伸縮時高度不跳動 */
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spectrum::before { animation: none; }
+}
+
 /* --- 版面容器 ---------------------------------------------------------- */
 
 .sheet {
+  position: relative;
+  z-index: 1;
   max-width: var(--measure);
   margin: 0 auto;
   padding: 5rem 1.5rem 4rem;
@@ -60,6 +147,18 @@ body {
 .masthead {
   padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--rule);
+}
+
+.slogan {
+  margin: 0 0 1.5rem;
+  font-family: "Parisienne", "Snell Roundhand", "Apple Chancery", cursive;
+  /* 手機上隨寬度縮小，讓整句維持一行；真的要換行時，balance 會平均斷在逗號後 */
+  font-size: clamp(1.375rem, 6.8vw, 2.375rem);
+  line-height: 1.25;
+  text-wrap: balance;
+  color: var(--ink);
+  /* 疊在極光上時，用一圈很淡的黑暈把字托出來 */
+  text-shadow: 0 0 18px rgba(0, 0, 0, 0.55), 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
 .masthead h1 {
@@ -112,6 +211,10 @@ h2 .gloss {
 
 .entry + .entry { padding-top: 2.25rem; }
 
+/* 每個 App 用自己的強調色；沒標 data-app 的條目退回站台的 --accent */
+.entry[data-app="floranote"] { --entry-accent: var(--floranote); }
+.entry[data-app="memoland"]  { --entry-accent: var(--memoland); }
+
 .entry-icon {
   flex: 0 0 auto;
   width: 72px;
@@ -131,13 +234,6 @@ h2 .gloss {
   font-weight: 600;
 }
 
-.entry-zh {
-  font-weight: 400;
-  font-size: 0.9375rem;
-  color: var(--muted);
-  margin-left: 0.4rem;
-}
-
 .entry-desc {
   margin: 0 0 0.6rem;
   font-size: 0.9375rem;
@@ -155,7 +251,7 @@ h2 .gloss {
 .specimen {
   margin: 1.25rem 0 0;
   padding-left: 0.9rem;
-  border-left: 2px solid var(--accent);
+  border-left: 2px solid var(--entry-accent, var(--accent));
   font-family: var(--font-serif);
   font-size: 0.875rem;
   line-height: 1.6;
@@ -163,6 +259,16 @@ h2 .gloss {
 }
 
 .specimen i { font-style: italic; }
+
+/* 座標示例：同一個點的三種寫法，窄螢幕時整組換行、不在數字中間斷開 */
+.coords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1em 1.1em;
+  font-variant-numeric: tabular-nums;
+}
+
+.coords span { white-space: nowrap; }
 
 /* --- 條目連結 ---------------------------------------------------------- */
 
@@ -172,8 +278,37 @@ h2 .gloss {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 1.25rem;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
   font-size: 0.9375rem;
+}
+
+/* 商店徽章：獨立一行，App Store 排第一（Apple 規定），之後的 Google Play 接在後面。
+   官方圖檔不可改色、不可變形、不可做成灰色停用狀態；
+   螢幕上最小高度 40px，周圍留白至少為高度的 1/4 = 10px（Apple 行銷指南） */
+.store-badges {
+  margin: 1.75rem 0 0;   /* 與上方三個文字連結拉開距離 */
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+}
+
+.store-badges a {
+  display: inline-block;
+  line-height: 0;
+  border-bottom: 0;
+  border-radius: 7px;
+  transition: opacity 0.15s;
+}
+
+.store-badges a:hover { opacity: 0.8; }
+
+.store-badges img {
+  display: block;
+  width: auto;
+  height: 40px;
 }
 
 /* --- 聯絡 -------------------------------------------------------------- */
@@ -215,6 +350,19 @@ footer {
 
 footer p { margin: 0; }
 
+/* Apple 商標聲明（使用 App Store 徽章的授權條件） */
+footer .legal {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* 一句一行；窄螢幕上單句放不下時，balance 讓斷開的兩段長度平均 */
+footer .legal span {
+  display: block;
+  text-wrap: balance;
+}
+
 /* --- 內文頁（隱私權、支援）共用 ---------------------------------------- */
 
 .doc h1 {
@@ -252,7 +400,11 @@ footer p { margin: 0; }
 /* --- 窄螢幕 ------------------------------------------------------------ */
 
 @media (max-width: 480px) {
+  :root { --spectrum-h: 4px; }
+
   .sheet { padding-top: 3rem; }
+
+  .slogan { margin-bottom: 1.25rem; }
 
   .entry {
     flex-direction: column;
